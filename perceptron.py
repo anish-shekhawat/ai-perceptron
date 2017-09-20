@@ -7,7 +7,7 @@ import random
 import math
 
 ground_function = ""
-n = 4
+n = 5
 
 
 def validate_ground_func_file():
@@ -122,7 +122,6 @@ def get_samples(num_samples):
 
 
 def nested_bool_func(vector):
-
     with open(sys.argv[3], 'r') as file:
         lines = file.readlines()
 
@@ -135,14 +134,15 @@ def nested_bool_func(vector):
              else abs(vector[abs(int(func_list[0]))-1] - 1))
 
     for i in range(1, len(func_list), 2):
+
         if func_list[i] == 'OR':
-            value = (value or
-                     vector[int(func_list[i]) - 1] if int(func_list[i]) > 0
-                     else abs(vector[abs(int(func_list[i]))-1)] - 1)
+            value = value or (vector[int(func_list[i + 1]) - 1] if
+                              int(func_list[i + 1]) > 0 else
+                              abs(vector[abs(int(func_list[i + 1])) - 1] - 1))
         else:
-            value = (value and
-                     vector[int(func_list[i]) - 1] if int(func_list[i]) > 0
-                     else abs(vector[abs(int(func_list[i])) - 1)] - 1)
+            value = value and (vector[int(func_list[i+1]) - 1] if
+                               int(func_list[i+1]) > 0 else
+                               abs(vector[abs(int(func_list[i+1])) - 1] - 1))
     return value
 
 
