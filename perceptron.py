@@ -9,7 +9,11 @@ import math
 ground_function = ""
 n = 4
 
+
 def validate_ground_func_file():
+
+    global ground_function
+
     with open(sys.argv[3], 'r') as file:
         line = file.readline()
         line = line.strip()
@@ -84,8 +88,9 @@ def validate():
 def bool_dist_samples(num_samples):
 
     sample_matrix = list()
+    vector = list()
     for i in range(num_samples):
-        vector = list()
+        del vector[:]
         for j in range(n):
             vector.append(random.randint(0, 1))
         sample_matrix.append(vector)
@@ -96,8 +101,9 @@ def bool_dist_samples(num_samples):
 def sphere_dist_samples(num_samples):
 
     sample_matrix = list()
+    vector = list()
     for i in range(num_samples):
-        vector = list()
+        del vector[:]
         for j in range(n):
             vector.append(random.random())
         sample_matrix.append(vector)
@@ -115,6 +121,31 @@ def get_samples(num_samples):
     return sample_vector
 
 
+def nested_bool_func(vector):
+
+    with open(sys.argv[3], 'r') as file:
+        lines = file.readlines()
+
+    func_list = lines[1].strip().split(" ")
+    print vector
+    print func_list
+
+    value = (vector[int(func_list[0]) - 1]
+             if int(func_list[0]) > 0
+             else abs(vector[abs(int(func_list[0]))-1] - 1))
+
+    for i in range(1, len(func_list), 2):
+        if func_list[i] == 'OR':
+            value = (value or
+                     vector[int(func_list[i]) - 1] if int(func_list[i]) > 0
+                     else abs(vector[abs(int(func_list[i]))-1)] - 1)
+        else:
+            value = (value and
+                     vector[int(func_list[i]) - 1] if int(func_list[i]) > 0
+                     else abs(vector[abs(int(func_list[i])) - 1)] - 1)
+    return value
+
+
 def main():
     # Check if all arguments are present
     if len(sys.argv) < 8:
@@ -126,8 +157,9 @@ def main():
 
     validate()
 
-    x_vector = get_samples(sys.argv[5])
+    x_vector = get_samples(int(sys.argv[5]))
 
+    nested_bool_func(x_vector[0])
 
 
 if __name__ == '__main__':
