@@ -125,9 +125,7 @@ def nested_bool_func(vector):
     with open(sys.argv[3], 'r') as file:
         lines = file.readlines()
 
-    func_list = lines[1].strip().split(" ")
-    print vector
-    print func_list
+    func_list = lines[1].strip().split()
 
     value = (vector[int(func_list[0]) - 1]
              if int(func_list[0]) > 0
@@ -146,6 +144,25 @@ def nested_bool_func(vector):
     return value
 
 
+def threshold_func(vector):
+    print vector
+    with open(sys.argv[3], 'r') as file:
+        lines = file.readlines()
+
+    coefficient_list = lines[2].strip().split()
+    coefficient_list = [int(item) for item in coefficient_list]
+    print coefficient_list
+
+    value = 0
+    for i in range(len(vector)):
+        value = value + (coefficient_list[i] * vector[i])
+
+    if value < int(lines[1]):
+        return 0
+    else:
+        return 1
+
+
 def main():
     # Check if all arguments are present
     if len(sys.argv) < 8:
@@ -159,7 +176,7 @@ def main():
 
     x_vector = get_samples(int(sys.argv[5]))
 
-    nested_bool_func(x_vector[0])
+    threshold_func(x_vector[0])
 
 
 if __name__ == '__main__':
