@@ -7,7 +7,6 @@ import random
 import math
 
 ground_function = ""
-n = 5
 
 
 def validate_ground_func_file():
@@ -85,7 +84,23 @@ def validate():
         exit(1)
 
 
-def bool_dist_samples(num_samples):
+def calculate_input_len():
+
+    with open(sys.argv[3], 'r') as file:
+            lines = file.readlines()
+
+    if ground_function == "NBF":
+        lines[1] = lines[1].strip().split()
+        length = max([int(item) for item in lines[1][::2]])
+
+    else:
+        lines[2] = lines[2].strip().split()
+        length = len([int(item) for item in lines[2]])
+
+    return length
+
+
+def bool_dist_samples(num_samples, n):
 
     sample_matrix = list()
     vector = list()
@@ -98,7 +113,7 @@ def bool_dist_samples(num_samples):
     return sample_matrix
 
 
-def sphere_dist_samples(num_samples):
+def sphere_dist_samples(num_samples, n):
 
     sample_matrix = list()
     vector = list()
@@ -111,12 +126,12 @@ def sphere_dist_samples(num_samples):
     return sample_matrix
 
 
-def get_samples(num_samples):
+def get_samples(num_samples, n):
 
     if ground_function == "NBF" or sys.argv[4] == "bool":
-        sample_vector = bool_dist_samples(num_samples)
+        sample_vector = bool_dist_samples(num_samples, n)
     else:
-        sample_vector = sphere_dist_samples(num_samples)
+        sample_vector = sphere_dist_samples(num_samples, n)
 
     return sample_vector
 
@@ -145,13 +160,11 @@ def nested_bool_func(vector):
 
 
 def threshold_func(vector):
-    print vector
     with open(sys.argv[3], 'r') as file:
         lines = file.readlines()
 
     coefficient_list = lines[2].strip().split()
     coefficient_list = [int(item) for item in coefficient_list]
-    print coefficient_list
 
     value = 0
     for i in range(len(vector)):
@@ -173,10 +186,10 @@ def main():
         exit(1)
 
     validate()
+    n = calculate_input_len()
+    x_vector = get_samples(int(sys.argv[5]), n)
 
-    x_vector = get_samples(int(sys.argv[5]))
-
-    threshold_func(x_vector[0])
+    print x_vector[0]
 
 
 if __name__ == '__main__':
