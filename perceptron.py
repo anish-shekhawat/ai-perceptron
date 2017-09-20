@@ -176,6 +176,38 @@ def threshold_func(vector):
         return 1
 
 
+def threshold_activation(dot_product, theta):
+    if dot_product < theta:
+        return 0
+    else:
+        return 1
+
+
+def tanh_activation(dot_product, theta):
+    return (0.5 + 0.5 * math.tanh((dot_product - theta) / 2))
+
+
+def relu_activation(dot_product, theta):
+    return max(0, dot_product - theta)
+
+
+def train(vectors):
+
+    weights = random.sample(range(100), len(vectors[0]))
+    theta = 10
+    activation_func_mapping = {
+        'threshold': threshold_activation,
+        'tanh': tanh_activation,
+        'relu': relu_activation
+    }
+
+    dot_product = 0
+    for i in range(len(vectors[0])):
+        dot_product += weights[i] * vectors[0][i]
+
+    prediction = activation_func_mapping[sys.argv[1]](dot_product, theta)
+
+
 def main():
     # Check if all arguments are present
     if len(sys.argv) < 8:
@@ -189,7 +221,7 @@ def main():
     n = calculate_input_len()
     x_vector = get_samples(int(sys.argv[5]), n)
 
-    print x_vector[0]
+    train(x_vector)
 
 
 if __name__ == '__main__':
