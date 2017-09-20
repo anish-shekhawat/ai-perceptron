@@ -119,6 +119,10 @@ def sphere_dist_samples(num_samples, n):
         vector = []
         for j in range(n):
             vector.append(random.random())
+
+        squares = [item ** 2 for item in vector]
+        squareroot_sum = sum(squares) ** 0.5
+        vector = [item/squareroot_sum for item in vector]
         sample_matrix.append(vector)
 
     return sample_matrix
@@ -203,10 +207,10 @@ def perceptron_update_func(vector, weights, theta_alpha, test):
 
 def winnow_update_func(vector, weights, theta_alpha, test):
     if test == 1:
-        for i in range(vector):
+        for i in range(len(vector)):
             weights[i] *= (1 / (theta_alpha[1] ** vector[i]))
     else:
-        for i in range(vector):
+        for i in range(len(vector)):
             weights[i] *= (theta_alpha[1] ** vector[i])
 
     return weights
@@ -228,8 +232,8 @@ def train(vectors):
     global activation_func_map
     global ground_function_map
 
-    weights = random.sample(range(1, 10), len(vectors[0]))
-    theta = 10
+    weights = random.sample(range(1, 11), len(vectors[0]))
+    theta = 20
     alpha = 1
 
     theta_alpha = [theta, alpha]
