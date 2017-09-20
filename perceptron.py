@@ -187,6 +187,7 @@ def threshold_activation(dot_product, theta):
 
 def tanh_activation(dot_product, theta):
     return (0.5 + (0.5 * math.tanh((dot_product - theta) / 2)))
+    # return (1 / (1 + math.exp(-(dot_product - theta))))
 
 
 def relu_activation(dot_product, theta):
@@ -233,7 +234,7 @@ def train(vectors):
     global ground_function_map
 
     weights = random.sample(range(1, 11), len(vectors[0]))
-    theta = 20
+    theta = 10
     alpha = 1
 
     theta_alpha = [theta, alpha]
@@ -297,8 +298,7 @@ def test(vectors, weights, theta):
 
         print output
 
-        if abs(prediction - actual) > 0:
-            sum_error += 1
+        sum_error += abs(prediction-actual)
 
     average_error = sum_error / float(len(vectors))
     print "Average Error: " + str(average_error)
