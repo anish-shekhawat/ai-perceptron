@@ -6,6 +6,38 @@ import re
 import math
 
 
+def validate_ground_func_file():
+    with open(sys.argv[3], 'r') as file:
+        line = file.readline()
+        line = line.strip()
+
+        if line == 'NBF':
+            line = file.readline()
+            pattern = re.compile("([+|-]\d+\s)([AND|OR]+\s[+|-]\d+\s)+")
+
+            if not pattern.match(line):
+                print >> sys.stderr, "NOT PARSEABLE"
+                exit(1)
+
+        elif line == 'TF':
+            line = file.readline()
+            pattern = re.compile("[+|-]\d+")
+
+            if not pattern.match(line):
+                print >> sys.stderr, "NOT PARSEABLE"
+                exit(1)
+
+            line = file.readline()
+            pattern = re.compile("([+|-]\d+([ \t]+[+|-]\d+)*)")
+
+            if not pattern.match(line):
+                print >> sys.stderr, "NOT PARSEABLE"
+                exit(1)
+
+        else:
+            print >> sys.stderr, "NOT PARSEABLE"
+
+
 def validate():
 
     # Check activation function parameter
@@ -24,6 +56,8 @@ def validate():
     if not os.path.isfile(sys.argv[3]):
         print >> sys.stderr, sys.argv[3] + " :file does not exist!"
         exit(1)
+
+    validate_ground_func_file()
 
     # Check distribution parameter
     if sys.argv[4] not in ['bool', 'sphere']:
@@ -50,7 +84,6 @@ def main():
         exit(1)
 
     validate()
-    #parse()
 
 
 if __name__ == '__main__':
