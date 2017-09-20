@@ -8,7 +8,6 @@ import math
 
 ground_function = ""
 
-
 def validate_ground_func_file():
 
     global ground_function
@@ -103,9 +102,8 @@ def calculate_input_len():
 def bool_dist_samples(num_samples, n):
 
     sample_matrix = list()
-    vector = list()
     for i in range(num_samples):
-        del vector[:]
+        vector = []
         for j in range(n):
             vector.append(random.randint(0, 1))
         sample_matrix.append(vector)
@@ -116,9 +114,8 @@ def bool_dist_samples(num_samples, n):
 def sphere_dist_samples(num_samples, n):
 
     sample_matrix = list()
-    vector = list()
     for i in range(num_samples):
-        del vector[:]
+        vector = []
         for j in range(n):
             vector.append(random.random())
         sample_matrix.append(vector)
@@ -184,28 +181,128 @@ def threshold_activation(dot_product, theta):
 
 
 def tanh_activation(dot_product, theta):
-    return (0.5 + 0.5 * math.tanh((dot_product - theta) / 2))
+    return (0.5 + (0.5 * math.tanh((dot_product - theta) / 2)))
 
 
 def relu_activation(dot_product, theta):
     return max(0, dot_product - theta)
 
 
-def train(vectors):
+def perceptron_update_func(vector, weights, theta_alpha, test):
+    if test == 1:
+        weights = [x1 - x2 for (x1, x2) in zip(weights, vector)]
+        # Update theta
+        theta_alpha[0] += 1
+    else:
+        weights = [x1 + x2 for (x1, x2) in zip(weights, vector)]
+        theta_alpha[0] -= 1
 
-    weights = random.sample(range(100), len(vectors[0]))
+    return weights
+
+
+def winnow_update_func(vector, weights, theta_alpha, test):
+    if test == 1:
+        for i in range(vector):
+            weights[i] *= (1 / (theta_alpha[1] ** vector[i]))
+    else:
+        for i in range(vector):
+            weights[i] *= (theta_alpha[1] ** vector[i])
+
+    return weights
+
+
+activation_func_map = {
+    'threshold': threshold_activation,
+    'tanh': tanh_activation,
+    'relu': relu_activation
+}
+ground_function_map = {
+    'NBF': nested_bool_func,
+    'TF': threshold_func
+}
+
+
+def train(vectors):
+    global ground_function
+    global activation_func_map
+    global ground_function_map
+
+    weights = random.sample(range(1, 101), len(vectors[0]))
     theta = 10
-    activation_func_mapping = {
-        'threshold': threshold_activation,
-        'tanh': tanh_activation,
-        'relu': relu_activation
+    alpha = 1
+
+    theta_alpha = [theta, alpha]
+    print "Reference: " + str(theta_alpha)
+
+    update_function_map = {
+        'perceptron': perceptron_update_func,
+        'winnow': winnow_update_func
     }
 
-    dot_product = 0
-    for i in range(len(vectors[0])):
-        dot_product += weights[i] * vectors[0][i]
+    for i in range(len(vectors)):
+        dot_product = 0
+        for j in range(len(vectors[i])):
+            dot_product += weights[j] * vectors[i][j]
 
-    prediction = activation_func_mapping[sys.argv[1]](dot_product, theta)
+        prediction = activation_func_map[sys.argv[1]](dot_product, theta)
+        actual = ground_function_map[ground_function](vectors[i])
+
+        output = ",".join(map(str, vectors[i])) + ":"
+        output += str(prediction) + ":" + str(actual)
+
+        if prediction == actual:
+            output += " no update"
+
+        elif prediction > actual:
+            weights = update_function_map[sys.argv[2]](
+                vectors[i], weights, theta_alpha, 1)
+            theta = theta_alpha[0]
+            output += " update : " + str(theta) + " : " + str(alpha)
+
+        else:
+            weights = update_function_map[sys.argv[2]](
+                vectors[i], weights, theta_alpha, 0)
+            theta = theta_alpha[0]
+            output += " update : " + str(theta) + " : " + str(alpha)
+
+        print output
+
+    return weights, theta
+
+
+def test(vectors, weights, theta):
+    global ground_function
+    global activation_func_map
+    global ground_function_map
+
+    sum_error = 0
+    epsilon = 0.2
+
+    for i in range(len(vectors)):
+        dot_product = 0
+        for j in range(len(vectors[i])):
+            dot_product += weights[j] * vectors[i][j]
+
+        prediction = activation_func_map[sys.argv[1]](dot_product, theta)
+        actual = ground_function_map[ground_function](vectors[i])
+
+        output = ",".join(map(str, vectors[i])) + ":"
+        output += str(prediction) + ":" + str(actual) + ":"
+        output += str(abs(prediction - actual))
+
+        print output
+
+        if abs(prediction - actual) > 0:
+            sum_error += 1
+
+    average_error = sum_error / float(len(vectors))
+    print "Average Error: " + str(average_error)
+    print "Epsilon: " + str(epsilon)
+
+    if average_error > epsilon:
+        print "TRAINING FAILED"
+    else:
+        print "TRAINING SUCCEEDED"
 
 
 def main():
@@ -219,9 +316,11 @@ def main():
 
     validate()
     n = calculate_input_len()
-    x_vector = get_samples(int(sys.argv[5]), n)
+    training_vectors = get_samples(int(sys.argv[5]), n)
+    weights, theta = train(training_vectors)
 
-    train(x_vector)
+    testing_vectors = get_samples(int(sys.argv[6]), n)
+    test(testing_vectors, weights, theta)
 
 
 if __name__ == '__main__':
