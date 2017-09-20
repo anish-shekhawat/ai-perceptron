@@ -3,8 +3,11 @@
 import sys
 import os.path
 import re
+import random
 import math
 
+ground_function = ""
+n = 4
 
 def validate_ground_func_file():
     with open(sys.argv[3], 'r') as file:
@@ -18,6 +21,8 @@ def validate_ground_func_file():
             if not pattern.match(line):
                 print >> sys.stderr, "NOT PARSEABLE"
                 exit(1)
+
+            ground_function = "NBF"
 
         elif line == 'TF':
             line = file.readline()
@@ -33,6 +38,8 @@ def validate_ground_func_file():
             if not pattern.match(line):
                 print >> sys.stderr, "NOT PARSEABLE"
                 exit(1)
+
+            ground_function = "TF"
 
         else:
             print >> sys.stderr, "NOT PARSEABLE"
@@ -74,6 +81,40 @@ def validate():
         exit(1)
 
 
+def bool_dist_samples(num_samples):
+
+    sample_matrix = list()
+    for i in range(num_samples):
+        vector = list()
+        for j in range(n):
+            vector.append(random.randint(0, 1))
+        sample_matrix.append(vector)
+
+    return sample_matrix
+
+
+def sphere_dist_samples(num_samples):
+
+    sample_matrix = list()
+    for i in range(num_samples):
+        vector = list()
+        for j in range(n):
+            vector.append(random.random())
+        sample_matrix.append(vector)
+
+    return sample_matrix
+
+
+def get_samples(num_samples):
+
+    if ground_function == "NBF" or sys.argv[4] == "bool":
+        sample_vector = bool_dist_samples(num_samples)
+    else:
+        sample_vector = sphere_dist_samples(num_samples)
+
+    return sample_vector
+
+
 def main():
     # Check if all arguments are present
     if len(sys.argv) < 8:
@@ -84,6 +125,9 @@ def main():
         exit(1)
 
     validate()
+
+    x_vector = get_samples(sys.argv[5])
+
 
 
 if __name__ == '__main__':
