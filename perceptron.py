@@ -8,6 +8,7 @@ import math
 
 ground_function = ""
 
+
 def validate_ground_func_file():
 
     global ground_function
@@ -227,7 +228,7 @@ def train(vectors):
     global activation_func_map
     global ground_function_map
 
-    weights = random.sample(range(1, 101), len(vectors[0]))
+    weights = random.sample(range(1, 10), len(vectors[0]))
     theta = 10
     alpha = 1
 
