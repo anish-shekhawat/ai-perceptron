@@ -233,17 +233,18 @@ def train(vectors):
     global activation_func_map
     global ground_function_map
 
-    weights = random.sample(range(1, 11), len(vectors[0]))
-    theta = 10
+    weights = [0] * len(vectors)
+    theta = 15
     alpha = 1
 
     theta_alpha = [theta, alpha]
-    print "Reference: " + str(theta_alpha)
 
     update_function_map = {
         'perceptron': perceptron_update_func,
         'winnow': winnow_update_func
     }
+
+    print "\nTraining...\n"
 
     for i in range(len(vectors)):
         dot_product = 0
@@ -263,13 +264,13 @@ def train(vectors):
             weights = update_function_map[sys.argv[2]](
                 vectors[i], weights, theta_alpha, 1)
             theta = theta_alpha[0]
-            output += " update : " + str(theta) + " : " + str(alpha)
+            output += " update"
 
         else:
             weights = update_function_map[sys.argv[2]](
                 vectors[i], weights, theta_alpha, 0)
             theta = theta_alpha[0]
-            output += " update : " + str(theta) + " : " + str(alpha)
+            output += " update"
 
         print output
 
@@ -282,7 +283,9 @@ def test(vectors, weights, theta):
     global ground_function_map
 
     sum_error = 0
-    epsilon = 0.2
+    epsilon = float(sys.argv[7])
+
+    print "\nTesting...\n"
 
     for i in range(len(vectors)):
         dot_product = 0
@@ -301,6 +304,8 @@ def test(vectors, weights, theta):
         sum_error += abs(prediction-actual)
 
     average_error = sum_error / float(len(vectors))
+
+    print "\nTheta: " + str(theta)
     print "Average Error: " + str(average_error)
     print "Epsilon: " + str(epsilon)
 
