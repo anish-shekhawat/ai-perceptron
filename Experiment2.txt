@@ -1,0 +1,21 @@
+# Experiment 1
+
+We ran multiple experiments using the winnow learning algorithm. The details of these runs are shown below in the table. (P.S. If table cannot be seen in proper format please increase the width of the window).
+
++----------------------------------------------------------------------------------------------------------------+
+|                                                  EXPERIMENT 2                                                  |
++----------------------------------------------------------------------------------------------------------------+
+| Run No. | num_train | num_test | activation | training_algo | ground_func | distribution | epsilon | avg_error |
++---------+-----------+----------+------------+---------------+-------------+--------------+---------+-----------+
+|    1    |    500    |    250   |  threshold |     winnow    |      tf     |    sphere    |   0.2   |   0.6159  |
++---------+-----------+----------+------------+---------------+-------------+--------------+---------+-----------+
+|    2    |    500    |    250   |    tanh    |     winnow    |      tf     |    sphere    |   0.2   |   0.704   |
++---------+-----------+----------+------------+---------------+-------------+--------------+---------+-----------+
+|    3    |    500    |    250   |    relu    |     winnow    |      tf     |    sphere    |   0.2   |   0.676   |
++---------+-----------+----------+------------+---------------+-------------+--------------+---------+-----------+
+|    4    |  1474550  |    250   |    relu    |     winnow    |      tf     |    sphere    |   0.2   |   0.664   |
++---------+-----------+----------+------------+---------------+-------------+--------------+---------+-----------+
+
+Comparing with Experiment1 we can see that the perceptron is better than winnow learning algorith. Also we see that extending the min. no of samples, i.e. by using 2m/epsilon samples to winnow does not work since even after using those many samples the accuracy doesn't improve.
+
+P.S. Couldn't include the output for run 4 because the output files themselves were larger than 100 MB

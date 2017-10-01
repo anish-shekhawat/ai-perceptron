@@ -1,0 +1,39 @@
+# Experiment 1
+
+We ran multiple experiments using the perceptron learning algorithm. The details of these runs are shown below in the table. (P.S. If table cannot be seen in proper format please increase the width of the window).
+
++------------------------------------------------------------------------------------------------------------------+
+|                                                   EXPERIMENT 1                                                   |
++------------------------------------------------------------------------------------------------------------------+
+| Run. No. | num_train | num_test | activation | training_algo | ground_func | distribution | epsilon | avg. error |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     1    |    500    |    250   |  threshold |   perceptron  |     nbf     |     bool     |   0.2   |     0.0    |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     2    |    500    |    250   |    tanh    |   perceptron  |     nbf     |     bool     |   0.2   |   0.1235   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     3    |    500    |    250   |    relu    |   perceptron  |     nbf     |     bool     |   0.2   |    0.132   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     4    |    500    |    250   |  threshold |   perceptron  |      tf     |     bool     |   0.2   |     0.0    |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     5    |    500    |    250   |    tanh    |   perceptron  |      tf     |     bool     |   0.2   |     0.0    |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     6    |    500    |    250   |    relu    |   perceptron  |      tf     |     bool     |   0.2   |     0.0    |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     7    |    500    |    250   |  threshold |   perceptron  |      tf     |    sphere    |   0.2   |    0.032   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     8    |    500    |    250   |    tanh    |   perceptron  |      tf     |    sphere    |   0.2   |    0.166   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|     9    |  1474550  |    250   |    tanh    |   perceptron  |      tf     |    sphere    |   0.2   |   0.0081   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|    10    |    500    |    250   |    relu    |   perceptron  |      tf     |    sphere    |   0.2   |   0.7542   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+|    11    |  1474550  |    250   |    relu    |   perceptron  |      tf     |    sphere    |   0.2   |   0.2786   |
++----------+-----------+----------+------------+---------------+-------------+--------------+---------+------------+
+
+As we can see from the above table we get zero avg. error rate in 4 cases. We can see that when we use bool distributions along with linear threshold function, we get highest accuracy regardless of the activation function. We also see the in boolean distribution cases we get a higher accuracy as compared to shpherical distribution. This jives with our PAC learning results from the class.
+
+We can also see that we get worse accuracy when we use relu with linear threshold function and spherical distribution. In the output file (perceptron_relu_tf_sphere.txt) in Runs1 folder we can se the update happen frequently till end. This along with very low accuracy gives hints that the algorithm didn't converge using 500 training samples.
+
+In order to check if the algorithm converges we use max samples as calculates using calculate_m.py. We see that using that many samples reduces the error rate by 63%. 
+
+P.S. Couldn't include the output for run 9 and 11 because the output files themselves were larger than 100 MB 
