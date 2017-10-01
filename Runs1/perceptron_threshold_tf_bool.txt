@@ -1,0 +1,762 @@
+> python perceptron.py threshold perceptron ground_file_tf.txt bool 500 250 0.2
+
+Training...
+
+1,1,1:0:1 update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,1:0:1 update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+1,0,1:0:1 update
+1,0,0:0:0 no update
+1,0,1:0:1 update
+1,0,1:0:1 update
+1,0,0:0:0 no update
+1,1,1:1:1 no update
+0,0,1:0:1 update
+0,0,0:0:0 no update
+0,0,1:0:1 update
+1,0,0:0:0 no update
+0,0,1:0:1 update
+1,0,0:0:0 no update
+1,1,0:1:0 update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,0,1:1:1 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+1,1,1:1:1 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+1,1,0:0:0 no update
+1,0,0:0:0 no update
+1,1,1:1:1 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,0,1:1:1 no update
+1,1,1:1:1 no update
+0,0,1:1:1 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+0,1,0:0:0 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+0,1,0:0:0 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,1:1:1 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+0,1,0:0:0 no update
+0,1,1:1:1 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+0,1,0:0:0 no update
+0,1,1:1:1 no update
+0,1,0:0:0 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+0,1,1:1:1 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+0,1,0:0:0 no update
+1,0,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+1,1,0:0:0 no update
+1,1,0:0:0 no update
+1,0,1:1:1 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+1,0,1:1:1 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,1:1:1 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+1,0,1:1:1 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+1,0,0:0:0 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+0,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+1,0,0:0:0 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,0,1:1:1 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+1,1,1:1:1 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+1,0,1:1:1 no update
+0,0,1:1:1 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+0,1,0:0:0 no update
+0,1,0:0:0 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+1,1,0:0:0 no update
+1,0,1:1:1 no update
+0,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+1,0,1:1:1 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+0,1,0:0:0 no update
+0,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+0,1,0:0:0 no update
+1,1,1:1:1 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+1,0,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,0,1:1:1 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,1:1:1 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+0,0,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,1:1:1 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+0,1,0:0:0 no update
+1,0,1:1:1 no update
+1,1,0:0:0 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+0,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,1,0:0:0 no update
+1,0,0:0:0 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+0,0,1:1:1 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+0,0,1:1:1 no update
+1,1,0:0:0 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+1,0,0:0:0 no update
+1,0,0:0:0 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+1,0,0:0:0 no update
+0,1,0:0:0 no update
+0,0,0:0:0 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,0,0:0:0 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,1,0:0:0 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+0,1,1:1:1 no update
+0,1,1:1:1 no update
+0,0,0:0:0 no update
+0,0,0:0:0 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+0,0,0:0:0 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,1:1:1 no update
+1,1,0:0:0 no update
+1,0,0:0:0 no update
+1,1,0:0:0 no update
+1,1,0:0:0 no update
+1,1,0:0:0 no update
+1,0,1:1:1 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+0,0,0:0:0 no update
+0,0,1:1:1 no update
+1,0,1:1:1 no update
+1,1,1:1:1 no update
+1,0,0:0:0 no update
+1,0,1:1:1 no update
+1,0,0:0:0 no update
+1,0,1:1:1 no update
+0,1,0:0:0 no update
+
+Testing...
+
+1,1,1:1:1:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,0,1:1:1:0
+1,0,0:0:0:0
+1,0,0:0:0:0
+1,1,1:1:1:0
+1,0,1:1:1:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+1,1,0:0:0:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+1,0,1:1:1:0
+1,0,1:1:1:0
+0,1,0:0:0:0
+1,1,0:0:0:0
+1,1,0:0:0:0
+0,1,1:1:1:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+1,0,1:1:1:0
+0,1,0:0:0:0
+0,0,0:0:0:0
+0,1,1:1:1:0
+1,0,0:0:0:0
+0,0,1:1:1:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+1,1,1:1:1:0
+0,1,1:1:1:0
+0,0,1:1:1:0
+0,0,0:0:0:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+0,1,1:1:1:0
+1,0,0:0:0:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+1,1,1:1:1:0
+0,0,0:0:0:0
+1,0,1:1:1:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+1,0,0:0:0:0
+0,1,1:1:1:0
+1,0,0:0:0:0
+1,1,1:1:1:0
+1,1,0:0:0:0
+0,0,1:1:1:0
+1,1,0:0:0:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+0,0,1:1:1:0
+0,0,0:0:0:0
+0,1,1:1:1:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+0,1,0:0:0:0
+0,1,0:0:0:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+0,1,0:0:0:0
+0,1,1:1:1:0
+0,0,0:0:0:0
+1,0,1:1:1:0
+0,0,0:0:0:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+0,1,0:0:0:0
+0,0,0:0:0:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,1,0:0:0:0
+1,0,0:0:0:0
+0,0,1:1:1:0
+0,1,1:1:1:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+0,1,1:1:1:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+0,0,1:1:1:0
+1,1,0:0:0:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+1,0,1:1:1:0
+0,0,0:0:0:0
+0,0,1:1:1:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+0,0,0:0:0:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+0,1,1:1:1:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+1,1,0:0:0:0
+0,1,1:1:1:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+1,1,0:0:0:0
+1,0,0:0:0:0
+0,0,1:1:1:0
+0,0,0:0:0:0
+0,1,1:1:1:0
+0,0,0:0:0:0
+0,0,0:0:0:0
+0,0,1:1:1:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+1,0,1:1:1:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+1,0,1:1:1:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+0,0,0:0:0:0
+0,0,1:1:1:0
+1,0,0:0:0:0
+1,0,0:0:0:0
+1,1,1:1:1:0
+0,1,1:1:1:0
+0,1,0:0:0:0
+0,1,1:1:1:0
+1,0,1:1:1:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+0,0,0:0:0:0
+0,1,1:1:1:0
+1,1,1:1:1:0
+1,0,1:1:1:0
+1,1,0:0:0:0
+1,0,0:0:0:0
+1,1,0:0:0:0
+1,1,0:0:0:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+1,0,1:1:1:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+0,0,1:1:1:0
+0,1,1:1:1:0
+0,1,1:1:1:0
+1,1,0:0:0:0
+1,1,0:0:0:0
+1,1,1:1:1:0
+0,1,0:0:0:0
+1,0,1:1:1:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+0,0,1:1:1:0
+0,1,0:0:0:0
+0,0,0:0:0:0
+1,0,1:1:1:0
+1,0,1:1:1:0
+1,0,1:1:1:0
+0,0,1:1:1:0
+0,0,1:1:1:0
+0,1,0:0:0:0
+0,1,0:0:0:0
+0,1,0:0:0:0
+0,0,0:0:0:0
+1,1,1:1:1:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+0,0,1:1:1:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+1,1,0:0:0:0
+0,0,1:1:1:0
+0,1,1:1:1:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+1,1,0:0:0:0
+1,0,0:0:0:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+0,1,1:1:1:0
+1,1,1:1:1:0
+1,1,0:0:0:0
+1,0,1:1:1:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+1,0,1:1:1:0
+1,1,0:0:0:0
+0,1,1:1:1:0
+1,0,0:0:0:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+0,0,1:1:1:0
+0,1,0:0:0:0
+1,1,0:0:0:0
+0,1,1:1:1:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+1,0,0:0:0:0
+1,0,0:0:0:0
+1,0,1:1:1:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+0,0,1:1:1:0
+0,1,1:1:1:0
+1,1,1:1:1:0
+0,1,0:0:0:0
+1,0,0:0:0:0
+0,1,0:0:0:0
+1,1,1:1:1:0
+1,1,1:1:1:0
+1,0,0:0:0:0
+1,0,0:0:0:0
+0,0,0:0:0:0
+0,1,0:0:0:0
+
+Theta: 8
+Average Error: 0.0
+Epsilon: 0.2
+TRAINING SUCCEEDED
